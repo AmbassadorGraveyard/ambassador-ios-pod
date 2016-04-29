@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
    s.name = 'Ambassador'
    s.platform = :ios
-   s.version = '1.0.3'
+   s.version = '1.0.31'
    s.summary = 'Ambassador Referral Marketing SDK for iOS'
    s.homepage = 'https://github.com/GetAmbassador/ambassador-ios-pod'
    s.license = { :type => 'MIT' }
