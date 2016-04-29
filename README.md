@@ -12,7 +12,7 @@ Next, you'll need to go to <b>Build Phases</b> in your project and link the foll
 
 <b> libicucore.tbd </b>
 
- <img src="screenShots/libicucore.png" width="600" />
+ <img src="screenShots/libicucore.png" width="900" />
 
 ## Usage
 
