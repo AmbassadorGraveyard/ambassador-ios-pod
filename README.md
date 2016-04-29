@@ -3,7 +3,7 @@
 ## Installation
 The preferred way to install the framework is with CocoaPods.  Add a dependency in your Podfile with the following line:
   
-<b> pod 'Ambassador', '~> 1.0.3'</b>
+<b> pod 'Ambassador'</b>
 
 Next, you'll need to go to <b>Build Phases</b> in your project and link the following library:
 
