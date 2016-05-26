@@ -13,4 +13,5 @@ Pod::Spec.new do |s|
    s.resources = 'Ambassador.bundle'
    s.xcconfig = { 'FRAMEWORK_SEARCH_PATHS' => '"$(PODS_ROOT)/Ambassador"' }
    s.source_files = 'Ambassador.framework/Headers/*'
+   s.dependencies = 'libicucore.tbd'
 end
