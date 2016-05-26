@@ -8,7 +8,8 @@ Pod::Spec.new do |s|
    s.author = { 'Jake Dunahee' => 'jake@getambassdor.com' }
    s.source = { :git => 'https://github.com/GetAmbassador/ambassador-ios-pod.git', :tag => '1.0.41' }
    s.preserve_paths = 'Ambassador.framework', 'libicucore.tbd'
-   s.frameworks = 'Ambassador', 'libicucore'
+   s.frameworks = 'Ambassador'
+   s.library = 'icucore'
    s.requires_arc = true
    s.resources = 'Ambassador.bundle'
    s.xcconfig = { 'FRAMEWORK_SEARCH_PATHS' => '"$(PODS_ROOT)/Ambassador"' }
