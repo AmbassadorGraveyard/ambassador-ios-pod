@@ -13,5 +13,5 @@ Pod::Spec.new do |s|
    s.requires_arc = true
    s.resources = 'Ambassador.bundle'
    s.xcconfig = { 'FRAMEWORK_SEARCH_PATHS' => '"$(PODS_ROOT)/Ambassador"' }
-   s.source_files = 'Classes/*'
+   s.source_files = 'Ambassador.framework/Headers/*'
 end
