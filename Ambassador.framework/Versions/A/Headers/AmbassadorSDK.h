@@ -53,12 +53,27 @@ typedef enum conversionStatus {
  
  @param userID A unique ID tied to the user being identified
  @param traits Extra values tied to the user. Ex: Email, first name, last name, etc.
- @param options Used to pass extra options for the identify call. Ex: Passing the key/pair value '@"campaign" : @"1"' will auto-enroll the user in the campaign.
  
  @warning It is highly recommended to at least include an 'email' value in the traits dictionary in order for full functionality in the Ambassador SDK.
  
  */
-+ (void)identifyWithUserID:(NSString *)userID traits:(NSDictionary *)traits options:(NSDictionary *)options;
++ (void)identifyWithUserID:(NSString *)userID traits:(NSDictionary *)traits;
+
+
+/**
+ 
+ Identifies a user based a unique userID and a dictionary of traits.
+ 
+ Recommended to put on a login screen or after the initial call to run Ambassador if you have the user's info stored.
+ 
+ @param userID A unique ID tied to the user being identified
+ @param traits Extra values tied to the user. Ex: Email, first name, last name, etc.
+ @param campaign Auto-enrolls the user being identified into the campaign
+ 
+ @warning It is highly recommended to at least include an 'email' value in the traits dictionary in order for full functionality in the Ambassador SDK.
+ 
+ */
++ (void)identifyWithUserID:(NSString *)userID traits:(NSDictionary *)traits autoEnrollCampaign:(NSString *)campaign;
 
 
 /**
@@ -132,6 +147,45 @@ typedef enum conversionStatus {
  
  */
 + (void)presentRAFForCampaign:(NSString *)ID FromViewController:(UIViewController *)viewController withThemePlist:(NSString*)themePlist;
+
+
+/**
+ 
+ Registers a device's APN Device Token in order to send notifications.
+ 
+ @param deviceToken Apple Push Notification device token which can be found in the AppDelegate's 'didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken' function if your app uses Apple Push Notifications.
+ 
+ */
++ (void)registerDeviceToken:(NSString*)deviceToken;
+
+
+/**
+ 
+ Presents a Net Promoter Score (NPS) survey when triggered by a Push Notification.
+ 
+ This function should be called from the AppDelegate's 'didReceiveRemoteNotification:(NSDictionary *)userInfo' function.
+ Put an 'if (userInfo[@"ambassador_sdk"] && [userInfo[@"ambassador_sdk"] boolValue])' statement around this function to guaruntee that the notification is intended for Ambassador.
+ 
+ @param notification The notification body sent through the AppDelegate's 'didReceiveRemoteNotification:(NSDictionary *)userInfo' function.
+ 
+ **/
++ (void)presentNPSSurveyWithNotification:(NSDictionary*)notification;
+
+
+/**
+ 
+ Presents a Net Promoter Score (NPS) survey based on a Push Notification using a custom theme.
+ 
+ This function should be called from the AppDelegate's 'didReceiveRemoteNotification:(NSDictionary *)userInfo' function.
+ Put an 'if (userInfo[@"ambassador_sdk"] && [userInfo[@"ambassador_sdk"] boolValue])' statement around this function to guarantee that the notification is intended for Ambassador.
+ 
+ @param notification The notification body sent through the AppDelegate's 'didReceiveRemoteNotification:(NSDictionary *)userInfo' function.
+ @param backgroundColor The background color of the NPS survey.
+ @param contentColor The color used for the text and the NPS score slider.
+ @param buttonColor The background color of the 'Submit' button in the NPS survey.
+ 
+ */
++ (void)presentNPSSurveyWithNotification:(NSDictionary *)notification backgroundColor:(UIColor *)backgroundColor contentColor:(UIColor *)contentColor buttonColor:(UIColor *)buttonColor;
 
 
 /**
