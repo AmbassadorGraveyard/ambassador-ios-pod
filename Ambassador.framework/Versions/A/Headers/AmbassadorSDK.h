@@ -68,12 +68,47 @@ typedef enum conversionStatus {
  
  @param userID A unique ID tied to the user being identified
  @param traits Extra values tied to the user. Ex: Email, first name, last name, etc.
+ @param completion Block that tells the user when the identify call is done attempting to send.  Block passes back success as a boolean.
+ 
+ @warning It is highly recommended to at least include an 'email' value in the traits dictionary in order for full functionality in the Ambassador SDK.
+ 
+ */
++ (void)identifyWithUserID:(NSString *)userID traits:(NSDictionary *)traits completion:(void (^)(BOOL *success))completion;
+
+
+/**
+ 
+ Identifies a user based a unique userID and a dictionary of traits.
+ 
+ Recommended to put on a login screen or after the initial call to run Ambassador if you have the user's info stored.
+ 
+ @param userID A unique ID tied to the user being identified
+ @param traits Extra values tied to the user. Ex: Email, first name, last name, etc.
  @param campaign Auto-enrolls the user being identified into the campaign
  
  @warning It is highly recommended to at least include an 'email' value in the traits dictionary in order for full functionality in the Ambassador SDK.
  
  */
 + (void)identifyWithUserID:(NSString *)userID traits:(NSDictionary *)traits autoEnrollCampaign:(NSString *)campaign;
+
+
+
+/**
+ 
+ Identifies a user based a unique userID and a dictionary of traits with a call back.
+ 
+ Recommended to put on a login screen or after the initial call to run Ambassador if you have the user's info stored.
+ 
+ @param userID A unique ID tied to the user being identified
+ @param traits Extra values tied to the user. Ex: Email, first name, last name, etc.
+ @param campaign Auto-enrolls the user being identified into the campaign
+ @param completion Block that tells the user when the identify call is done attempting to send.  Block passes back success as a boolean.
+ 
+ @warning It is highly recommended to at least include an 'email' value in the traits dictionary in order for full functionality in the Ambassador SDK.
+ 
+ */
++ (void)identifyWithUserID:(NSString *)userID traits:(NSDictionary *)traits autoEnrollCampaign:(NSString *)campaign completion:(void (^)(BOOL *success))completion;
+
 
 
 /**
