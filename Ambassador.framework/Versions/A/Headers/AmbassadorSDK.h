@@ -73,7 +73,7 @@ typedef enum conversionStatus {
  @warning It is highly recommended to at least include an 'email' value in the traits dictionary in order for full functionality in the Ambassador SDK.
  
  */
-+ (void)identifyWithUserID:(NSString *)userID traits:(NSDictionary *)traits completion:(void (^)(BOOL *success))completion;
++ (void)identifyWithUserID:(NSString *)userID traits:(NSDictionary *)traits completion:(void (^)(BOOL))completion;
 
 
 /**
@@ -107,7 +107,7 @@ typedef enum conversionStatus {
  @warning It is highly recommended to at least include an 'email' value in the traits dictionary in order for full functionality in the Ambassador SDK.
  
  */
-+ (void)identifyWithUserID:(NSString *)userID traits:(NSDictionary *)traits autoEnrollCampaign:(NSString *)campaign completion:(void (^)(BOOL *success))completion;
++ (void)identifyWithUserID:(NSString *)userID traits:(NSDictionary *)traits autoEnrollCampaign:(NSString *)campaign completion:(void (^)(BOOL))completion;
 
 
 
