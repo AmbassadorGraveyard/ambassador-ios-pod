@@ -6,7 +6,7 @@ Pod::Spec.new do |s|
    s.homepage = 'https://github.com/GetAmbassador/ambassador-ios-pod'
    s.license = { :type => 'MIT' }
    s.author = { 'Matt Majewski' => 'matt@getambassador.com' }
-   s.source = { :git => 'https://github.com/GetAmbassador/ambassador-ios-pod.git', :tag => '1.0.11' }
+   s.source = { :git => 'https://github.com/GetAmbassador/ambassador-ios-pod.git', :tag => '1.0.12' }
    s.preserve_paths = 'Ambassador.framework', 'libicucore.tbd'
    s.frameworks = 'Ambassador'
    s.library = 'icucore'
