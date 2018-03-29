@@ -1,12 +1,12 @@
 Pod::Spec.new do |s|
    s.name = 'Ambassador'
    s.platform = :ios
-   s.version = '1.0.12'
+   s.version = '1.0.13'
    s.summary = 'Ambassador Referral Marketing SDK for iOS'
    s.homepage = 'https://github.com/GetAmbassador/ambassador-ios-pod'
    s.license = { :type => 'MIT' }
    s.author = { 'Matt Majewski' => 'matt@getambassador.com' }
-   s.source = { :git => 'https://github.com/GetAmbassador/ambassador-ios-pod.git', :tag => '1.0.12' }
+   s.source = { :git => 'https://github.com/GetAmbassador/ambassador-ios-pod.git', :tag => '1.0.13' }
    s.preserve_paths = 'Ambassador.framework', 'libicucore.tbd'
    s.frameworks = 'Ambassador'
    s.library = 'icucore'
