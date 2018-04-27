@@ -132,7 +132,7 @@ typedef enum conversionStatus {
  @param completion Block that tells the user when the conversion is done attempting to send.  Block passes back the conversion, the conversionStatus, and an error if one occurs.
  
  */
-+ (void)registerConversion:(AMBConversionParameters *)conversionParameters restrictToInstall:(BOOL)restrictToInstall completion:(void (^)(AMBConversionParameters *conversion, ConversionStatus conversionStatus, NSError *error))completion __attribute__((deprecated("Use method 'trackEvent: properties: options:' instead")));
++ (void)registerConversion:(AMBConversionParameters *)conversionParameters restrictToInstall:(BOOL)restrictToInstall completion:(void (^)(AMBConversionParameters *conversion, ConversionStatus conversionStatus, NSError *error))completion __attribute__((deprecated("Use method 'trackEvent: properties:' instead")));
 
 
 /**
@@ -247,9 +247,10 @@ typedef enum conversionStatus {
  @param parameters An object that contains the parameters used to customize the Welcome Screen.
  @param available A block that gets called if a referral took place and passes back the AMBWelcomeScreenViewController to be handled.
  
+ @warning The Welcome Screen feature is no longer supported.
+ 
  */
-+ (void)presentWelcomeScreen:(AMBWelcomeScreenParameters*)parameters ifAvailable:(void(^)(AMBWelcomeScreenViewController *welcomeScreenVC))available;
-
++ (void)presentWelcomeScreen:(AMBWelcomeScreenParameters*)parameters ifAvailable:(void(^)(AMBWelcomeScreenViewController *welcomeScreenVC))available __attribute__((deprecated("This feature has been deprecated.")));
 
 /**
  
