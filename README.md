@@ -23,7 +23,7 @@ If you don't use CocoaPods, follow these steps to install the Ambassador SDK in 
 ![](https://files.readme.io/3b660e5-Pasted_Image_4_24_18__10_43_AM.png)
 
 ### Adding a bridging header (Swift projects)
-The SDK is written in Objective-C. In addition to the previous steps, installing the SDK into a Swift project requires a bridging header. If your project doesn't already have a bridging header, you can add one easily. If you already have a bridging header due to another library or framework, go to [Configuring a Bridging header (Swift Projects)](#section-configuring-a-bridging-header-swift-projects-).
+The SDK is written in Objective-C. In addition to the previous steps, installing the SDK into a Swift project requires a bridging header. If your project doesn't already have a bridging header, you can add one easily. If you already have a bridging header due to another library or framework, go to [Configuring a Bridging header (Swift Projects)](#configuring-a-bridging-header-swift-projects).
 
 * Add a new file to your project.
 ![](https://files.readme.io/wZIMtbkVRUanF1hofVBx_ios_sdk_5.png)
@@ -65,12 +65,21 @@ In the bridging header, add an import statement for the Ambassador SDK.
 **Objective-C**
 
 ```
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {\n  // Override point for customization after application launch.\n  \n  [AmbassadorSDK runWithUniversalToken:<your_sdk_token> universalID:<your_universal_id>];\n\n  return YES;\n}
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    // Override point for customization after application launch.
+    [AmbassadorSDK runWithUniversalToken:<your_sdk_token> universalID:<your_universal_id>];
+    return YES;
+}
 ```
 
 **Swift**
 ```
-func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool\n{\n    // Override point for customization after application launch.\n\n    AmbassadorSDK.runWithUniversalToken(<your_sdk_token>, universalID:<your_universal_id>)\n\n    return true\n
+func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool
+{
+    // Override point for customization after application launch.
+    AmbassadorSDK.runWithUniversalToken(<your_sdk_token>, universalID:<your_universal_id>)
+    return true
+}
 ```
 
 
