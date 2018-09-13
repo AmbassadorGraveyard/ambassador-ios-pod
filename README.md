@@ -89,6 +89,12 @@ func application(application: UIApplication, didFinishLaunchingWithOptions launc
 
 ## Release Notes
 
+1.1.3
+
+
+    Update documentation on SDK Methods
+    Update tests and CI
+
 1.1.2
 
 
