@@ -5,7 +5,7 @@
 The preferred way to install the framework is with CocoaPods. Add a dependency in your Podfile with the following line:
 
 ```
-pod 'Ambassador', '1.1.2'
+pod 'Ambassador', '1.1.4'
 ```
 
 If you don't use CocoaPods, follow these steps to install the Ambassador SDK in your Objective-C or Swift project.
@@ -88,6 +88,9 @@ func application(application: UIApplication, didFinishLaunchingWithOptions launc
 #### For instructions on how to use the SDK, check out our <a href="https://docs.getambassador.com/v2.0.0/page/ios-sdk">Official Documentation</a>.
 
 ## Release Notes
+1.1.4
+
+    Added properties to conversion call (addToGroups and autoCreate)
 
 1.1.3
 
